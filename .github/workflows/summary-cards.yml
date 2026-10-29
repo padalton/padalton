@@ -1,0 +1,31 @@
+name: Generate profile summary cards
+
+on:
+  schedule:
+    - cron: "30 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "profile-summary-card-output/**"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the cards and commit them to main
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          # Add a classic PAT (repo + read:user) as SUMMARY_GITHUB_TOKEN to count private activity too.
+          GITHUB_TOKEN: ${{ secrets.SUMMARY_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          BRANCH_NAME: main
+          TIME_ZONE: Europe/Vienna
+          THEME: tokyonight
