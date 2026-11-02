@@ -56,7 +56,7 @@ Plus apaleo consulting: onboarding, migrations from legacy systems, custom integ
 
 ### 🚦 Current side project
 
-**[office-traffic-light](https://github.com/padalton/office-traffic-light)**, open source and open hardware. A miniature traffic light for my basement office that tells the family from the hallway whether it is worth coming down: red for meetings, yellow for focused work, green for come in, off when I am not there. The status is detected automatically (microphone or camera in use, calendar, working hours, screen lock) and can be overridden from a KDE Plasma widget, a Stream Deck or the web UI. An E-Ink panel below the lights shows until when and what comes next.
+**[doormutex](https://github.com/padalton/doormutex)**, open source and open hardware. A miniature traffic light for my basement office that tells the family from the hallway whether it is worth coming down: red for meetings, yellow for focused work, green for come in, off when I am not there. The status is detected automatically (microphone or camera in use, calendar, working hours, screen lock) and can be overridden from a KDE Plasma widget, a Stream Deck or the web UI. An E-Ink panel below the lights shows until when and what comes next.
 
 ESP32-C6 firmware in C, a Go hub running in Docker, Home Assistant via MQTT discovery, a KiCad board and an OpenSCAD case. Public from the first commit so you can watch it take shape.
 
